@@ -1,16 +1,68 @@
-/* Diagnostic Styling */
-* {
-  outline: 2px dotted gray;
-} 
+body {
+	display: grid; 
+	place-content: center; 
+	height: 100vh; 
+  background-color: aliceblue;
+	
+}
 
-/* temp background color */
-body {
-    background: lightgray;
-}
+svg {
+  /* diagnostic styling	 */
   
-/* vertical and horizontal centering */
-body {
-  display: grid;
-  place-content: center;
-  height: 100vh;
+    stroke: teal;
+    stroke-width: 1;
+    
+    animation-name: flash;
+    animation-duration: 1s;
+    
+  /* 	animation-iteration-count: infinite; */
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+
+    transition: scale 2s;
+    
+  }
+
+
+svg:hover {
+  
+  animation: heartBeat 3s; 
+	scale: 7;
 }
+
+@keyframes heartBeat {
+  
+  0% {
+    rotate: 0deg;
+    scale: 1;
+    stroke: violet;
+	}
+	
+	50% {
+    rotate: 360deg;
+    scale: 3;
+    stroke: violet;
+	}
+	
+	100% {
+		rotate: 0deg;
+    scale: 7;
+    stroke: teal;
+	}
+}
+
+@keyframes flash {
+  0% {
+    stroke: teal;
+  }
+  
+  50% {
+    stroke: violet;
+  }
+  
+  100% {
+    stroke: teal;
+  }
+}
+
+  
